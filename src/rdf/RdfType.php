@@ -3,6 +3,7 @@ namespace org\desone\wordpress\wpLinkedData;
 
 class RdfType {
     const RDF_XML = 'rdfxml';
+    const JSON_LD = 'json';
     const TURTLE = 'ttl';
 
     /**
@@ -16,6 +17,8 @@ class RdfType {
                 return 'text/turtle';
             case self::RDF_XML:
                 return 'application/rdf+xml';
+            case self::JSON_LD:
+                return 'application/ld+json';
         }
         return 'text/plain';
     }
@@ -31,6 +34,8 @@ class RdfType {
                 return self::TURTLE;
             case 'application/rdf+xml':
                 return self::RDF_XML;
+            case 'application/ld+json':
+                return self::JSON_LD;
         }
         return null;
     }
