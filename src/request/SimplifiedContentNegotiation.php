@@ -19,6 +19,9 @@ class SimplifiedContentNegotiation implements ContentNegotiation
         if (in_array('application/rdf+xml', $acceptedTypes)) {
             return RdfType::RDF_XML;
         }
+        if (in_array('application/ld+json', $acceptedTypes)) {
+            return RdfType::JSON_LD;
+        }
         return null;
 
     }

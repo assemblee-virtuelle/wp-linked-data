@@ -12,7 +12,7 @@ class PeclHttpContentNegotiation implements ContentNegotiation
 
     public function negotiateRdfContentType($acceptHeader)
     {
-        $contentTypes = array('application/rdf+xml', 'text/turtle');
+        $contentTypes = array('application/rdf+xml', 'text/turtle', 'application/ld+json');
         $negotiationResults = array ();
         $negotiatedType = http_negotiate_content_type($contentTypes, $negotiationResults);
         if (!empty ($negotiationResults)) {
